@@ -1,0 +1,2 @@
+程序报错ReferenceError: b is not defined
+因为b由let声明，其作用于仅限于if块语句中，在if块语句外b没有声明。
