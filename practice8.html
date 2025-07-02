@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>practice8</title>
-    <script>/*
-        function calculateTotal(prices) {
+    <script>
+      /* function calculateTotal(prices) {
     return prices.reduce(function(total, price) {
         return total + price;
     }, 0);
@@ -14,13 +14,18 @@ function createGreeting(name) {
     return function(timeOfDay) {
         return `Good ${timeOfDay}, ${name}!`;
     };
-}*/
-        let calculateTotal = prices => prices.reduce((total, price) => total + price, 0);
-        let createGreeting = name => timeOfDay => `Good ${timeOfDay}, ${name}!`;
-        calculateTotal(1,2,3,4,5);
+} */
+        const calculateTotal = (prices) => {
+            return prices.reduce((total, price) => {
+                return total + price;
+            }, 0);
+        }; 
+        const createGreeting = (name) => {
+            return (timeOfDay) => {
+                return `Good ${timeOfDay}, ${name}!`;
+            };
+        };
     </script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body></body>
 </html>
