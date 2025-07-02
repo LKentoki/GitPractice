@@ -1,0 +1,19 @@
+执行顺序
+同步任务执行​​
+console.log('Start') 立即执行，输出 Start。
+console.log('End') 立即执行，输出 End。
+此时调用栈清空，同步任务完成。
+​​微任务队列处理​​
+Promise.resolve().then() 的回调（() => console.log('Promise 1')）加入微任务队列。
+第一个微任务执行，输出 Promise 1，并触发第二个 then() 回调（() => console.log('Promise 2')）加入微任务队列。
+事件循环立即清空微任务队列，执行第二个微任务，输出 Promise 2。
+​​宏任务队列处理​​
+setTimeout 的回调（() => console.log('setTimeout')）加入宏任务队列。
+微任务队列清空后，事件循环从宏任务队列中取出该任务执行，输出 setTimeout。
+
+输出结果：
+Start
+End
+Promise 1
+Promise 2
+setTimeout

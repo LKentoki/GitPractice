@@ -1,0 +1,23 @@
+在函数内部，this 的值取决于函数如何被调用。
+对于典型的函数，this 的值是函数被访问的对象。换句话说，如果函数调用的形式是 obj.f()，那么 this 就指向 obj。
+this 的值不是拥有此函数作为自己属性的对象，而是用于调用此函数的对象。
+例：
+const obj4 = {
+    name: "obj4",
+    getThis() {
+        return this;
+    },
+};
+
+const obj5 = { name: "obj5" };
+
+obj5.getThis = obj4.getThis;
+console.log(obj5.getThis());
+输出{ name: 'obj5', getThis: [Function: getThis] }。
+
+在箭头函数中，this 保留了闭合词法上下文的 this 值。
+例：
+const globalObject = this;
+const foo = () => this;
+console.log(foo() === globalObject);
+输出true。
