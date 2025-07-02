@@ -32,21 +32,26 @@
         // 2. 找出各科目的最高分学生
         function findTopStudentsBySubject(students) {
             // 返回对象，键为科目名，值为该科目最高分学生信息
-            let top = {}, JStop = 0, Rtop = 0, Vtop = 0;
+            let top = {}, JS = [], R = [], V = [];
             for (let i = 0; i < students.length; i++) {
-                if (students[i].subject === 'JavaScript' && students[i].averageScore > JStop) {
-                    top.JavaScript = students[i].name;
-                    JStop = students[i].averageScore;
+                if (students[i].subject === 'JavaScript') {
+                    JS.push(students[i]);
                 }
-                if (students[i].subject === 'React' && students[i].averageScore > Rtop) {
-                    top.React = students[i].name;
-                    Rtop = students[i].averageScore;
-                }
-                if (students[i].subject === 'Vue' && students[i].averageScore > Vtop) {
-                    top.Vue = students[i].name;
-                    Vtop = students[i].averageScore;
+                else {
+                    if (students[i].subject === 'React') {
+                        R.push(students[i]);
+                    }
+                    else {
+                        V.push(students[i]);
+                    }
                 }
             }
+            JS.sort((x, y) => y.averageScore - x.averageScore);
+            R.sort((x, y) => y.averageScore - x.averageScore);
+            V.sort((x, y) => y.averageScore - x.averageScore);
+            top.JavaScript = JS[0].name;
+            top.React = R[0].name;
+            top.Vue = V[0].name;
             return top;
         }
 
