@@ -14,6 +14,11 @@
 
         // 请完成以下函数：
         // 1. 计算每个学生的平均分
+        const newStudents = [];
+        for (let i = 0; i < students.length; i++) {
+            newStudents.push(students[i]);
+        }
+
         function calculateAverageScores(students) {
             // 返回新数组，每个学生对象添加 averageScore 属性
             for (let i = 0; i < students.length; i++) {
@@ -56,7 +61,7 @@
             }
             return above;
         }
-        calculateAverageScores(students);
+        calculateAverageScores(newStudents);
         console.log(findTopStudentsBySubject(students));
         console.log('平均分大于85的学生：' + getHighPerformers(students));
     </script>
