@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>practice10</title>
+    <script>
+        // 要求：使用模板字符串创建此函数
+        function createUserCard(user) {
+            // user对象包含：name, age, email, avatar, isOnline
+            // 返回HTML字符串
+            return `
+            <div class="user-card">
+            <img src="${user.avatar}" alt="${user.name}的头像">
+            <h3>${user.name}</h3>
+            <p>年龄：${user.age}</p>
+            <p>邮箱：${user.email}</p>
+            <span class="status ${user.isOnline ? 'online' : 'offline'}">
+                ${user.isOnline ? '在线' : '离线'}
+            </span>
+            </div>
+            `
+        }
+
+        // 期望的HTML结构：
+        /*
+        <div class="user-card">
+            <img src="${avatar}" alt="${name}的头像">
+            <h3>${name}</h3>
+            <p>年龄：${age}</p>
+            <p>邮箱：${email}</p>
+            <span class="status ${isOnline ? 'online' : 'offline'}">
+                ${isOnline ? '在线' : '离线'}
+            </span>
+        </div>
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
