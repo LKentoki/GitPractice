@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>practice9</title>
+    <script>
+        function processUser(user) {
+            /* const name = user.name;
+            const age = user.age;
+            const email = user.email || 'no-email@example.com';
+            const city = user.address.city;
+            const country = user.address.country; */
+            const {name, age, email = 'no-email@example.com', address: {city, country}} = user;
+
+            return {
+                displayName: name,
+                isAdult: age >= 18,
+                contact: email,
+                location: city + ', ' + country
+            };
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

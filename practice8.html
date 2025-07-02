@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>practice8</title>
+    <script>
+      /* function calculateTotal(prices) {
+    return prices.reduce(function(total, price) {
+        return total + price;
+    }, 0);
+}
+
+function createGreeting(name) {
+    return function(timeOfDay) {
+        return `Good ${timeOfDay}, ${name}!`;
+    };
+} */
+        const calculateTotal = (prices) => {
+            return prices.reduce((total, price) => {
+                return total + price;
+            }, 0);
+        }; 
+        const createGreeting = (name) => {
+            return (timeOfDay) => {
+                return `Good ${timeOfDay}, ${name}!`;
+            };
+        };
+    </script>
+  </head>
+  <body></body>
+</html>
