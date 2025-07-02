@@ -27,11 +27,22 @@
         // 2. 找出各科目的最高分学生
         function findTopStudentsBySubject(students) {
             // 返回对象，键为科目名，值为该科目最高分学生信息
-            let top;
-            let s = Object.create();
+            let top = {}, JStop = 0, Rtop = 0, Vtop = 0;
             for (let i = 0; i < students.length; i++) {
-                Object.create();
+                if (students[i].subject === 'JavaScript' && students[i].averageScore > JStop) {
+                    top.JavaScript = students[i].name;
+                    JStop = students[i].averageScore;
+                }
+                if (students[i].subject === 'React' && students[i].averageScore > Rtop) {
+                    top.React = students[i].name;
+                    Rtop = students[i].averageScore;
+                }
+                if (students[i].subject === 'Vue' && students[i].averageScore > Vtop) {
+                    top.Vue = students[i].name;
+                    Vtop = students[i].averageScore;
+                }
             }
+            return top;
         }
 
         // 3. 筛选出平均分大于85的学生姓名
@@ -46,8 +57,8 @@
             return above;
         }
         calculateAverageScores(students);
-        let top = findTopStudentsBySubject(students);
-        let above = getHighPerformers(students);
+        console.log(findTopStudentsBySubject(students));
+        console.log('平均分大于85的学生：' + getHighPerformers(students));
     </script>
 </head>
 <body>
