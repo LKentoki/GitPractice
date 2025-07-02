@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>practice12</title>
+    <script>
+        const students = [
+            { id: 1, name: '张三', scores: [85, 92, 78], subject: 'JavaScript' },
+            { id: 2, name: '李四', scores: [90, 85, 88], subject: 'React' },
+            { id: 3, name: '王五', scores: [78, 85, 92], subject: 'JavaScript' },
+            { id: 4, name: '赵六', scores: [95, 90, 88], subject: 'Vue' },
+            { id: 5, name: '孙七', scores: [82, 78, 85], subject: 'React' }
+        ];
+
+        // 请完成以下函数：
+        // 1. 计算每个学生的平均分
+        function calculateAverageScores(students) {
+            // 返回新数组，每个学生对象添加 averageScore 属性
+            for (let i = 0; i < students.length; i++) {
+                let scores1 = students[i].scores.map(x => x / students[i].scores.length);
+                let averageScore = scores1.reduce((x, y) => x + y);
+                students[i].averageScore = averageScore;
+            }
+            return students;
+        }
+
+        // 2. 找出各科目的最高分学生
+        function findTopStudentsBySubject(students) {
+            // 返回对象，键为科目名，值为该科目最高分学生信息
+            let top = {}, JStop = 0, Rtop = 0, Vtop = 0;
+            for (let i = 0; i < students.length; i++) {
+                if (students[i].subject === 'JavaScript' && students[i].averageScore > JStop) {
+                    top.JavaScript = students[i].name;
+                    JStop = students[i].averageScore;
+                }
+                if (students[i].subject === 'React' && students[i].averageScore > Rtop) {
+                    top.React = students[i].name;
+                    Rtop = students[i].averageScore;
+                }
+                if (students[i].subject === 'Vue' && students[i].averageScore > Vtop) {
+                    top.Vue = students[i].name;
+                    Vtop = students[i].averageScore;
+                }
+            }
+            return top;
+        }
+
+        // 3. 筛选出平均分大于85的学生姓名
+        function getHighPerformers(students) {
+            // 返回姓名数组
+            let above = [];
+            for (let i = 0; i < students.length; i++) {
+                if (students[i].averageScore > 85) {
+                    above.push(students[i].name);
+                }
+            }
+            return above;
+        }
+        calculateAverageScores(students);
+        console.log(findTopStudentsBySubject(students));
+        console.log('平均分大于85的学生：' + getHighPerformers(students));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
