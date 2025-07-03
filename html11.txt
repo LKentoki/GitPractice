@@ -1,0 +1,100 @@
+**设计一个新闻网站首页的HTML结构，要求：**
+1. 包含网站头部、主导航、新闻列表、热门新闻侧边栏、页面底部
+2. 新闻列表中包含3篇新闻，每篇新闻要有标题、摘要、发布时间、分类标签
+3. 使用正确的语义化标签
+4. 添加必要的无障碍访问支持
+5. 确保HTML结构清晰，标题层级合理
+
+答题区域：
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻网站首页</title>
+</head>
+<body>
+    <!-- 在这里编写完整的新闻网站首页结构 -->
+    <!-- 无障碍跳过导航链接 -->
+    <a href="#main-content" class="skip-link">跳过导航直接查看内容</a>
+    
+    <div class="container">
+        <!-- 网站头部 -->
+        <header role="banner">
+            <h1>新闻头条</h1>
+            <p>专业、及时、全面的新闻资讯平台</p>
+        </header>
+        
+        <!-- 主导航 -->
+        <nav aria-label="主导航菜单">
+            <ul role="menubar">
+                <li role="menuitem"><a href="#" aria-current="page">首页</a></li>
+                <li role="menuitem"><a href="/domestic">国内</a></li>
+                <li role="menuitem"><a href="/international">国际</a></li>
+                <li role="menuitem"><a href="/technology">科技</a></li>
+                <li role="menuitem"><a href="/sports">体育</a></li>
+                <li role="menuitem"><a href="/contact">联系我们</a></li>
+            </ul>
+        </nav>
+        
+        <!-- 主体内容区 -->
+        <main id="main-content" role="main">
+            <!-- 新闻列表 -->
+            <section aria-labelledby="news-heading">
+                <h2 id="news-heading">最新新闻</h2>
+                
+                <!-- 第一篇新闻 -->
+                <article aria-labelledby="news1-title">
+                    <h3 id="news1-title">新闻1标题</h3>
+                    <p>新闻1内容<a href="xxx" aria-label="xxx">阅读全文</a></p>
+                    <time datetime="xxx">发表时间</time>
+                    <div class="tags" aria-label="新闻分类标签">
+                        <span>标签1</span>
+                        <span>标签2</span>
+                    </div>
+                </article>
+                
+                <!-- 第二篇新闻 -->
+                <article aria-labelledby="news2-title">
+                    <h3 id="news2-title">新闻2标题</h3>
+                    <p>新闻2内容<a href="xxx" aria-label="xxx">阅读全文</a></p>
+                    <time datetime="xxx">发表日期</time>
+                    <div class="tags" aria-label="新闻分类标签">
+                        <span>标签1</span>
+                        <span>标签2</span>
+                    </div>
+                </article>
+                
+                <!-- 第三篇新闻 -->
+                <article aria-labelledby="news3-title">
+                    <h3 id="news3-title">新闻3标题</h3>
+                    <p>新闻3内容<a href="/news/athletics-championship" aria-label="xxx">阅读全文</a></p>
+                    <time datetime="xxx">发表时间</time>
+                    <div class="tags" aria-label="新闻分类标签">
+                        <span>标签1</span>
+                        <span>标签2</span>
+                    </div>
+                </article>
+            </section>
+        </main>
+        
+        <!-- 热门新闻侧边栏 -->
+        <aside aria-labelledby="hot-news-heading">
+            <h2 id="hot-news-heading">热门新闻</h2>
+            <ul>
+                <li><a href="xxx"></a></li>
+                <li><a href="xxx"></a></li>
+                <li><a href="xxx"></a></li>
+                <li><a href="xxx"></a></li>
+            </ul>
+        </aside>
+    </div>
+    
+    <!-- 页面底部 -->
+    <footer role="contentinfo">
+        <p></p>
+    </footer>
+</body>
+</html>
+```
