@@ -1,0 +1,16 @@
+**编写一个图片展示区域的HTML代码，要求使用 `<figure>` 和 `<figcaption>` 标签，并包含无障碍访问支持。**
+
+答题区域：
+```html
+<!-- 在这里编写图片展示代码 -->
+<figure>
+    <img
+        src="xxx.jpg" 
+        alt="描述图片内容">
+    <figcaption>
+
+    <figcaption>
+</figure>
+```
+
+---
