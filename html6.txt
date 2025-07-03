@@ -1,0 +1,43 @@
+<article>
+    <header>
+        <h3>前端开发技巧</h3>
+        <section>
+            <time datetime="2024-01-15">2024年1月15日</time>
+            <address>作者：张三</address>
+        </section>
+    </header>
+    <main>
+        <p>本文介绍了一些前端开发的实用技巧...</p>
+        <aside>
+            <h4>相关链接</h4>
+            <ul>
+                <li><a href="#">JavaScript教程</a></li>
+            </ul>
+        </aside>
+    </main>
+</article>
+
+正确/错误判断：
+
+错误之处：
+1. <section>作为分组标签没有包含标题；
+2. <main>应包裹页面级核心内容，此处误用于文章内部；
+3. <aside>放置于<main>内部，会被识别为主要内容的一部分，但其内容（相关链接）实际属于附属信息。
+
+正确的写法应该是：
+<article>
+    <header>
+        <h3>前端开发技巧</h3>
+        <time datetime="2024-01-15">2024年1月15日</time>
+        <address>作者：张三</address>
+    </header>
+    <div>    
+        <p>本文介绍了一些前端开发的实用技巧...</p>
+    </div>
+    <aside>
+        <h4>相关链接</h4>
+        <ul>
+            <li><a href="#">JavaScript教程</a></li>
+        </ul>
+    </aside>
+</article>
