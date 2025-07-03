@@ -1,0 +1,59 @@
+**请编写一个博客文章的HTML结构，要求包含以下元素并使用正确的语义化标签：**
+- 文章标题
+- 发布时间
+- 作者信息
+- 文章内容（至少2个段落）
+- 文章标签
+- 相关文章推荐
+
+答题区域：
+```html
+<!-- 在这里编写你的HTML代码 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客文章</title>
+</head>
+<body>
+    <article>
+        <header>
+            <h1>文章标题</h1>
+            <div class="post-meta">
+                <time>发布时间</time>
+                <address>作者信息</address>
+            </div>
+        </header>
+
+        <section>
+            <h2>段落1标题</h2>
+            <p>段落1内容</p>
+        </section>
+
+        <section>
+            <h2>段落2标题</h2>
+            <p>段落2内容</p>
+        </section>
+
+        <div class="post-tags">
+            <span>标签：</span>
+            <ul>
+                <li>标签1</li>
+                <li>标签2</li>
+                <li>标签3</li>
+            </ul>
+        </div>
+    </article>
+
+    <aside aria-label="相关阅读">
+        <h2>延伸阅读</h2>
+        <ul>
+            <li><a>相关文章1</a></li>
+            <li><a>相关文章2</a></li>
+            <li><a>相关文章3</a></li>
+        </ul>
+    </aside>
+</body>
+</html>
+```
