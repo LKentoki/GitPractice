@@ -1,0 +1,26 @@
+<nav>
+    <ul>
+        <li><a href="/" class="current">首页</a></li>
+        <li><a href="/category">分类</a></li>
+        <li><a href="/tags">标签</a></li>
+        <li><a href="/about">关于</a></li>
+    </ul>
+</nav>
+
+优点：
+1. 使用 <nav> 标签明确标识导航区域，辅助技术可以识别为“导航地标”，帮助用户快速定位;
+2. 嵌套 <ul> 和 <li> 表示列表结构。
+
+缺点：
+1. 仅用 class="current" 提供视觉样式，但屏幕阅读器无法识别“当前页面”状态。需补充 aria-current="page" 属性
+2. <nav> 未用 aria-label 或 aria-labelledby 说明导航用途。
+
+改进建议：
+<nav aria-label="主导航">
+    <ul>
+        <li><a href="/" class="current" aria-current="page">首页</a></li>
+        <li><a href="/category">分类</a></li>
+        <li><a href="/tags">标签</a></li>
+        <li><a href="/about">关于</a></li>
+    </ul>
+</nav>
