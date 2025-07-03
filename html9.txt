@@ -1,0 +1,34 @@
+**创建一个页面的主要结构，包含：页面头部、导航菜单、主要内容区域、侧边栏和页面底部。要求使用语义化标签并添加适当的ARIA属性。**
+
+答题区域：
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面标题</title>
+</head>
+<body>
+    <!-- 在这里编写页面结构 -->
+    <header>
+        <nav>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+    </main>
+    <aside>
+
+    </aside>
+    <footer>
+
+    </footer>
+</body>
+</html>
+```
